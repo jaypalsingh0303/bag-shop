@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product create</title>
+</head>
+
+<body>
+    <% if(error.length> 0){ %>
+        <div style="margin-bottom: 20px;">
+            <%= error %>
+        </div>
+        <% } %>
+
+            <% if(success.length> 0){ %>
+                <div style="margin-bottom: 20px;">
+                    <%= success %>
+                </div>
+                <% } %>
+
+                    </div>
+                    <form action="/admin/product/store" method="post" enctype="multipart/form-data">
+                        <input type="file" name="image">
+                        <br>
+                        <br>
+                        <input type="text" name="name" placeholder="Name" />
+                        <br>
+                        <br>
+                        <input type="text" name="price" placeholder="Price" />
+                        <br>
+                        <br>
+                        <input type="text" name="discount" placeholder="Discount price" />
+                        <br>
+                        <br>
+                        <input type="text" name="bgcolor" placeholder="Background color" />
+                        <br>
+                        <br>
+                        <input type="text" name="panelcolor" placeholder="Panel color" />
+                        <br>
+                        <br>
+                        <input type="text" name="textcolor" placeholder="Text color" />
+                        <br>
+                        <br>
+                        <input type="submit" value="Create" />
+                    </form>
+
+                    <br><br><br>
+                    <a href="/admin">Admin</a>
+</body>
+
+</html>

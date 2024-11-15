@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const { generateToken } = require("../utils/generateToken");
 const userModel = require("../models/user-model");
+const productModel = require("../models/product-model");
 
 module.exports.registerView = function (req, res) {
     let error = req.flash("error");
@@ -89,4 +90,10 @@ module.exports.logout = function (req, res) {
     req.flash("error", "Logout successfully.");
     return res.redirect("/users/login");
 
+}
+
+module.exports.shopView = async function (req, res) {
+    let products = await productModel.find();
+
+    res.render("shop", { products });
 }
